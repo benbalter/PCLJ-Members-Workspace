@@ -2,7 +2,7 @@
 /*
 Plugin Name: PCLJ Capabilities Tweaks
 Plugin URI: 
-Description: o
+Description: Fixes anoyances caused by users not having edit_post permissions
 Version: 0.1
 Author: Benjamin J. Balter
 Author URI: http://ben.balter.com
