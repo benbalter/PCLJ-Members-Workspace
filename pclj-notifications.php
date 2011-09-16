@@ -19,6 +19,10 @@ class PCLJ_Notifications {
 	 * @param string state the slug of the state we're changing to
 	 */
 	function change_notification( $postID, $state ) {
+	
+		//prevent duplicate alerts
+		if ( wp_is_post_revision( $postID ) )
+			return false;
 		
 		$users = array();
 		
