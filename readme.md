@@ -13,6 +13,8 @@ Files
 * pclj-recently-modified.php - Widget to display recently revised documents
 * pclj-remove-menus.php - Remove unused menus from admin screens
 * pclj-state-permissions.php - Permissions based on state in workflow
+* wp-document-revisions-abstract-custom-field.php - abstract text field
+* wp-document-revisions-author-custom-field.php - author text field (article author, not WordPress author)
 * wp-document-revisions-editor-custom-field.php - editor custom taxonomy
 * wp-document-revisions-issue-custom-field.php - issue custom taxonomy
 * wp-document-revisions-type-custom-field.php - document-type custom taxonomy
