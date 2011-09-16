@@ -9,6 +9,10 @@ Author URI: http://ben.balter.com
 License: GPL2
 */
 
+/**
+ * Adding the action to get_header (front end) so that docs and feeds still work
+ * NOTE: the default feed /feed/ would still be accessible this way, but since unused in this use case, not a problem
+ */
 add_action( 'get_header', 'pclj_lock_down' );
 
 function pclj_lock_down() {
