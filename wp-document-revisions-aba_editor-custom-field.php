@@ -58,6 +58,7 @@ function wp_document_revisions_aba_editor_cb( $post) {
     
     //output ABA Editor dropdown
     echo '<select name="document_aba_editor" id="document_aba_editor" style="margin-left: 25px;">';
+    echo '<option></option>';
     foreach ( $authors as $author )
     	echo '<option value="' . $author->user_nicename . '" ' . selected( $author->user_nicename, get_post_meta( $post->ID, 'document_aba_editor' , true ) ) . ' >' .  $author->display_name . '</option>';
     echo '</select>';
