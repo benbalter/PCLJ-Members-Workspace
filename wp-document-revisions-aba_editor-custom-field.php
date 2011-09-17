@@ -13,6 +13,10 @@ License: GPL2
  * Callback to register ABA Editor metabox
  */
 function wp_document_revisions_register_aba_editor_metabox() {
+
+	if ( !current_user_can( 'edit_article_metadata' ) )
+		return;
+
     add_meta_box( 'document_aba_editor', 'ABA Editor', 'wp_document_revisions_aba_editor_cb', 'document');
 }
 
@@ -30,7 +34,11 @@ function  wp_document_revisions_save_aba_editor( $post_id ) {
   	//verify nonce
   	if ( !wp_verify_nonce( $_POST['document_aba_editor_nonce'], plugin_basename( __FILE__ ) ) )
   			return;
-  		
+ 
+  	//perms
+   	if ( !current_user_can( 'edit_article_metadata' ) )
+		return;
+ 
   	//verify permissions
   	if ( !current_user_can( 'edit_post', $post_id ) )
    		return;
