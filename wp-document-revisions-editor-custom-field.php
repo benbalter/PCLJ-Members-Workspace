@@ -33,7 +33,7 @@ License: GPL2
 			  'labels' => $labels,
 			  'show_ui' => true,
 			  'public' => true,
-			  'rewrite' =>true,
+			  'rewrite' => array( 'slug' => 'editor' ),
 			  'capabilities' => array( 
 				'manage_terms' => 'manage_categories',
 				'edit_terms' => 'manage_categories',

@@ -33,7 +33,7 @@ License: GPL2
 			  'labels' => $labels,
 			  'show_ui' => true,
 			  'public' => true,
-			  'rewrite' =>true,
+			  'rewrite' => array( 'slug' => 'issue' ),
 			  'capabilities' => array( 
 				'manage_terms' => 'manage_categories',
 				'edit_terms' => 'manage_categories',
@@ -41,7 +41,7 @@ License: GPL2
 				'assign_terms' => 'edit_documents',
 				),
 			));	
-		  
+					  
 		}
 	  
 	 //add action hook
