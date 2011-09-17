@@ -45,7 +45,7 @@ function wp_document_revisions_save_abstract( $post_id ) {
 		return;
     
     //store the data 			
-	update_post_meta( $post_id, 'document_abstract', $_POST['document_abstract'], true);
+	update_post_meta( $post_id, 'document_abstract', esc_html( $_POST['document_abstract'] ), true);
 
 }
 

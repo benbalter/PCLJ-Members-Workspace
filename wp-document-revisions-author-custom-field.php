@@ -46,7 +46,7 @@ function wp_document_revisions_save_author( $post_id ) {
 		return;
     
     //store the data 			
-	update_post_meta( $post_id, 'document_author', $_POST['document_author'], true);
+	update_post_meta( $post_id, 'document_author', esc_html( $_POST['document_author'] ), true);
 
 }
 
