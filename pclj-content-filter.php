@@ -35,6 +35,7 @@ function pclj_the_content_filter( $content ) {
 					'Current Workflow State' => pclj_get_exclusive_term( $post->ID, 'workflow_state' ),
 					'Student Editor' => pclj_get_exclusive_term( $post->ID, 'document_editor' ),
 					'ABA Editor' => $aba_editor,
+					'Type' => pclj_get_exclusive_term( $post->ID, 'document_type' ),
 					'Last Modified' => $last_modified,
 					);
 	
