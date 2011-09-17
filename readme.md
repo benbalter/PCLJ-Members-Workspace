@@ -4,6 +4,8 @@ Files
 =====
 
 * pclj-change-tracker.php - Auto-generates and appends revision summaries for changes to taxonomies, title, and visibility
+* pclj-content-filter.php - Displays document metadata on front end
+* pclj-current-issue.php - Tells the system what the current issue is so that it can direct users to the proper pipeline
 * pclj-force-login.php - Locks down site to non-logged in users
 * pclj-label-tweaks.php - Change all wording referring to "Documents" to Articles; does not affect functionality
 * pclj-lock-extender.php - Extends the default 2 minutes file lock buffer (how long a file is checked out if nothing is heard) to 5 minutes
