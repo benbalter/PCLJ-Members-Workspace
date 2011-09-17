@@ -15,6 +15,7 @@ Files
 * pclj-recently-modified.php - Widget to display recently revised documents
 * pclj-remove-menus.php - Remove unused menus from admin screens
 * pclj-state-permissions.php - Permissions based on state in workflow
+* wp-document-revisions-aba_editor-custom-field.php - aba editor user dropdown
 * wp-document-revisions-abstract-custom-field.php - abstract text field
 * wp-document-revisions-author-custom-field.php - author text field (article author, not WordPress author)
 * wp-document-revisions-editor-custom-field.php - editor custom taxonomy
