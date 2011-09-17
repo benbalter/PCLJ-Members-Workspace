@@ -47,7 +47,7 @@ function pclj_the_content_filter( $content ) {
 	$content .= '</p>';
 	
 	if ( $abstract ) 
-		$content .= "<p>" . nl2br( esc_html( $abstract ) ) . "</p>";
+		$content .= '<p class="abstract">' . nl2br( esc_html( $abstract ) ) . "</p>";
 		
 	return $content;
 }
