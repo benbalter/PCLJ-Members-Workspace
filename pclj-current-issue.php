@@ -68,7 +68,7 @@ function pclj_settings_page_cb() { ?>
 	<?php settings_fields('pclj_issue_settings'); ?>
 	<?php do_settings_sections('pclj'); ?>
 	<br />
-	<input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
+	<input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" class="button-primary"/>
 	</form></div>
 <?php
 }
