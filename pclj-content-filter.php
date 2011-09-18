@@ -23,18 +23,12 @@ function pclj_the_content_filter( $content ) {
 	$abstract = get_post_meta( $post->ID, 'document_abstract', true );
 	$latest = $wpdr->get_latest_revision( $post->ID );
 	$last_modified = human_time_diff( strtotime( $latest->post_modified_gmt ) ) . " ago by " . get_the_author_meta( 'display_name', $latest->post_author );
-	
-	$aba_editor = get_post_meta( $post->ID, 'document_aba_editor', true );
-	if ( $aba_editor ) {
-		$aba_editor = get_user_by( 'slug', $aba_editor );
-		$aba_editor = $aba_editor->display_name;
-	}
 
 	$metas = array( 'Author' =>  get_post_meta( $post->ID, 'document_author', true ), 
 					'Issue' => pclj_get_exclusive_term( $post->ID, 'document_issue' ),
 					'Current Workflow State' => pclj_get_exclusive_term( $post->ID, 'workflow_state' ),
 					'Student Editor' => pclj_get_exclusive_term( $post->ID, 'document_editor' ),
-					'ABA Editor' => $aba_editor,
+					'ABA Editor' => pclj_get_exclusive_term( $post->ID, 'document_aba_editor' ),
 					'Type' => pclj_get_exclusive_term( $post->ID, 'document_type' ),
 					'Last Modified' => $last_modified,
 					);
