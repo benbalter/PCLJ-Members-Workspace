@@ -210,7 +210,7 @@ class wpdr_track_meta_changes {
 		$revisions = $this->wpdr->get_revisions( $postID );
 		if ( sizeof( $revisions ) <= 1 )
 			return true;
-			
+		
 		return false;
 	}
 
