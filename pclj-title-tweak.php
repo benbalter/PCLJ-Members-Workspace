@@ -23,8 +23,25 @@ function pclj_add_author_to_title( $title, $postID ) {
 		
 	$last = substr( $author, strrpos( $author, ' ' ) );
 	
+	if ( pclj_get_type( $postID ) == 'note' )
+		return $last . ' (Note) - ' . $title;	
+	
 	return $last . ' - ' . $title;
 	
 }
 
 add_filter( 'the_title', 'pclj_add_author_to_title', 10, 2 );
+
+/**
+ * Gets the type from the type taxonomy
+ * @param int $postID the post ID
+ * @returns bool|string the type, false on failure
+ */
+function pclj_get_type( $postID ) {
+    $type = wp_get_post_terms( $postID, 'document_type' );	
+
+    if ( !$type )
+    	return false;
+    	
+    return $type[0]->slug;
+}

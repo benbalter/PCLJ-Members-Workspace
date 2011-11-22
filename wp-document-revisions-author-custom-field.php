@@ -50,7 +50,7 @@ function wp_document_revisions_save_author( $post_id ) {
 
 }
 
-add_action( 'save_post', 'wp_document_revisions_save_author', 10, 1 ); 
+add_action( 'save_post', 'wp_document_revisions_save_author', 100, 1 ); 
 
 /**
  * Callback to display Author metabox
