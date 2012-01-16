@@ -16,7 +16,7 @@ function pclj_add_author_to_title( $title, $postID ) {
 	if ( !$wpdr->verify_post_type( $postID ) )
 		return $title;
 
-	$author = get_post_meta( $postID, 'document_author', true );
+	$author = get_post_meta( $postID, '_ef_editorial_meta_text_author', true );
 	
 	if ( !$author || strlen ( $author ) == 0 )
 		return $title;
