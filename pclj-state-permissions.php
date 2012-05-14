@@ -126,7 +126,7 @@ class PCLJ_State_Permissions {
 			return true;
 		
 		//check permission and die if necessary
-		if ( !current_user_can( $action . '_documents_in_' . $terms[0]->slug ) )
+		if ( !current_user_can( $action . '_documents_in_' . $terms[0]->slug ) ) 
 			return false;
 		
 		return true;

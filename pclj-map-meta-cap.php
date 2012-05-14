@@ -37,3 +37,29 @@ function pclj_allow_upload( ) {
 }
 
 add_action( 'wp_loaded', 'pclj_allow_upload' );
+
+function pclj_edit_flow_user_groups_workaround( $query ) {
+	global $wpdb;
+	
+	if ( !isset( $query->query_vars['meta_key'] ) )
+		return $query;
+
+	if ( $query->query_vars['meta_key'] != $wpdb->prefix . 'user_level' )
+		return $query;
+	
+	unset( $query->query_vars['meta_key'] );
+	unset( $query->query_vars['meta_value'] );
+	unset( $query->query_vars['meta_compare'] );
+	unset( $query->query_vars['who'] );
+	
+	$where = "({$wpdb->usermeta}.meta_key = '{$wpdb->prefix}user_level' AND CAST({$wpdb->usermeta}.meta_value AS CHAR) != '0')";
+	
+	$query->query_where = str_replace( $where, '1=1', $query->query_where );
+	
+	$query->query_fields = 'DISTINCT ' . $query->query_fields;
+		
+	return $query;
+	
+}
+
+add_filter( 'pre_user_query', 'pclj_edit_flow_user_groups_workaround', 10 );
